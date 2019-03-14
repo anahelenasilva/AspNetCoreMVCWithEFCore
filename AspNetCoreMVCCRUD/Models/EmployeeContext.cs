@@ -12,5 +12,10 @@ namespace AspNetCoreMVCCRUD.Models
         {
             
         }
+
+        public DbSet<Employee> Employees { get; set; }
     }
 }
+
+// Add-Migration "InitialCreate"
+// Update-Database
