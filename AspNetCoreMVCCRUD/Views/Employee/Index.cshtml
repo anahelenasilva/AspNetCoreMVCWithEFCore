@@ -4,12 +4,10 @@
     ViewData["Title"] = "Index";
 }
 
-<h2>Index</h2>
+<h4>Employee Register</h4>
+<hr />
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-<table class="table">
+<table class="table table-hover">
     <thead>
         <tr>
             <th>
@@ -24,7 +22,9 @@
             <th>
                 @Html.DisplayNameFor(model => model.OfficeLocation)
             </th>
-            <th></th>
+            <th>
+                <a asp-action="AddOrEdit" class="btn btn-outline-success"><i class="far far-plus-square"></i>  Employee</a>
+            </th>
         </tr>
     </thead>
     <tbody>
@@ -43,9 +43,12 @@
                 @Html.DisplayFor(modelItem => item.OfficeLocation)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.EmployeeId">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.EmployeeId">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.EmployeeId">Delete</a>
+                <a asp-action="AddOrEdit" asp-route-id="@item.EmployeeId">
+                    <i class="far far-marker fa-lg"></i>
+                </a>
+                <a asp-action="Delete" asp-route-id="@item.EmployeeId" class="text-danger ml-2">
+                    <i class="far far-trash-alt fa-lg"></i>
+                </a>
             </td>
         </tr>
 }
